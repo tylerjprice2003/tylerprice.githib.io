@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Joke Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #joke {
+      font-size: 1.25rem;
+      margin: 20px 0;
+      min-height: 80px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #007acc;
+      color: white;
+      cursor: pointer;
+      margin: 10px 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005f99;
+    }
+
+    .reactions {
+      margin-top: 20px;
+    }
+
+    .reaction-btn {
+      background-color: #eee;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .reaction-btn:hover {
+      background-color: #ccc;
+    }
+
+    #thanks {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>😂 Random Joke Generator</h1>
+    <div id="joke">Click the button for a laugh!</div>
+    <button onclick="getJoke()">Get a Joke</button>
+
+    <div class="reactions" style="display: none;" id="reactions">
+      <p>What did you think?</p>
+      <button class="reaction-btn" onclick="react('funny')">😂 Funny</button>
+      <button class="reaction-btn" onclick="react('meh')">😐 Meh</button>
+      <button class="reaction-btn" onclick="react('bad')">😒 Bad</button>
+      <div id="thanks"></div>
+    </div>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don't scientists trust atoms? Because they make up everything!",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+      "I would avoid the sushi if I was you. It’s a little fishy.",
+      "Why don’t skeletons fight each other? They don’t have the guts.",
+      "What do you call fake spaghetti? An impasta!",
+      "How does a penguin build its house? Igloos it together.",
+      "Want to hear a construction joke? Oh... never mind, I’m still working on that one.",
+      "Why did the math book look sad? Because it had too many problems.",
+      "I used to play piano by ear, but now I use my hands."
+    ];
+
+    function getJoke() {
+      const joke = jokes[Math.floor(Math.random() * jokes.length)];
+      document.getElementById("joke").textContent = joke;
+      document.getElementById("reactions").style.display = "block";
+      document.getElementById("thanks").textContent = "";
+    }
+
+    function react(feedback) {
+      console.log("User reacted:", feedback);
+      const messages = {
+        funny: "Glad you liked it! 😂",
+        meh: "Fair enough. 😐",
+        bad: "Tough crowd! 😒"
+      };
+      document.getElementById("thanks").textContent = messages[feedback] || "Thanks for your feedback!";
+    }
+  </script>
+</body>
+</html>
