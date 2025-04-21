@@ -1,0 +1,54 @@
+/* Custom background */
+body {
+    background-color: #f2f7ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  .header {
+    background-image: url('../assets/img/soccer-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: blue;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .nav {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .nav a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .list-section {
+    padding: 20px;
+    background: #ffffff;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+  }
+  
+  .image-section img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #888;
+  }
+  
+  .video-section, .tableau-section, .back-top {
+    text-align: center;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+  }
